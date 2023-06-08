@@ -13,7 +13,7 @@ const {
   createProduct,
   updateProduct,
   deleteProduct,
-} = require('./index');
+} = require('../backend/index');
 
 // User Management Routes
 router.get('/users', getUsers);
