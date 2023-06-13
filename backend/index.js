@@ -28,7 +28,7 @@ app.post('/register', (req, res) => {
   // Save the user to the database
   pool.query(
     'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)',
-    [username, email, password],
+    [name, email, password],
     (error) => {
       if (error) {
         console.error('Failed to register user', error);
