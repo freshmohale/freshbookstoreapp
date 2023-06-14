@@ -1,12 +1,19 @@
-<div class="product-card">
-    <div class="product-image">
-      <img [src]="product.image" alt="Product Image">
-    </div>
-    <div class="product-details">
-      <h3 class="product-title">{{ product.title }}</h3>
-      <p class="product-author">{{ product.author }}</p>
-      <p class="product-description">{{ product.description }}</p>
-      <p class="product-price">{{ product.price }}</p>
+
+
+
+<div  class="card">
+  <img src="{{ product?.image }}" class="card-img-top imageSize" alt="...">
+  <div class="card-body">
+    <h1 class="card-title wrappTitle">{{product?.title}}</h1>
+     <p class="card-text" style="font-size: small; font-weight: bold;">{{product?.author}}</p>
+    <h5 class="card-title font-bold price" style="color: #689498;">{{product?.price | currency : 'ZAR' : 'R'}}</h5>
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <!-- <a class="badge rounded-pill bg-secondary" type="button" [routerLink]="['products/', product._id]">View more</a> -->
+      <span class="badge rounded-pill bg-secondary" type="button" routerLink="/products/{{product?.id}}">View more</span>
+
+     
     </div>
   </div>
-  
+</div>
+

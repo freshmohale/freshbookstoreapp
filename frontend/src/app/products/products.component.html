@@ -1,5 +1,9 @@
 <div *ngFor="let product of products">
-    <app-product-card [product]="product"></app-product-card>
+    
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.price }}</p>
+    <!-- Add other product properties you want to display -->
   </div>
+  
   
   

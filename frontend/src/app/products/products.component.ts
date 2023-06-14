@@ -8,22 +8,20 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: any[] = [];
+  products: any[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) { 
+    this.products = [];
+  }
 
   ngOnInit(): void {
     this.getProducts();
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(
-      (response: any) => {
-        this.products = response;
-      },
-      (error: any) => {
-        console.error(error);
-      }
-    );
+    this.productService.getProducts()
+      .subscribe((products: any[]) => {
+        this.products = products;
+      });
   }
 }
