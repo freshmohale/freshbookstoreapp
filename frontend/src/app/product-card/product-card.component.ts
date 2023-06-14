@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Product } from '../
+
 
 @Component({
   selector: 'app-product-card',
@@ -14,4 +14,5 @@ export class ProductCardComponent {
 
 
   constructor(private productService: ProductService) { }
+
 }
