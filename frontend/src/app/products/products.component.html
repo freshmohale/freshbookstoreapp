@@ -1,9 +1,5 @@
-<div *ngFor="let product of products">
-    
-    <h3>{{ product.title }}</h3>
-    <p>{{ product.price }}</p>
-    <!-- Add other product properties you want to display -->
+<div class="row">
+  <div class="col-md-4" *ngFor="let product of products">
+    <app-product-card [product]="product"></app-product-card>
   </div>
-  
-  
-  
+</div>
