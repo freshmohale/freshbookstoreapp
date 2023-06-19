@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Product } from '../../../../backend/models/Product'
+
 
 
 @Component({
@@ -11,9 +11,19 @@ import { Product } from '../../../../backend/models/Product'
 
 export class ProductCardComponent {
 
-  @Input() product?: Product;
+  @Input() product?: any;
 
 
   constructor(private productService: ProductService) { }
 
+  ngOnInit() {
+    this.productService.getProducts().subscribe(
+      (response: any) => {
+        this.product = response;
+      },
+      (error: any) => {
+        console.error('Failed to fetch products', error);
+      }
+    );
+  }
 }

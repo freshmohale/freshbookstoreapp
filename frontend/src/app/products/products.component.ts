@@ -13,15 +13,10 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) { 
     this.products = [];
   }
-
+  
   ngOnInit(): void {
-    this.getProducts();
+    throw new Error('Method not implemented.');
   }
 
-  getProducts(): void {
-    this.productService.getProducts()
-      .subscribe((products: any[]) => {
-        this.products = products;
-      });
-  }
+  
 }

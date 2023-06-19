@@ -6,21 +6,5 @@ import { ProductService } from '../product.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  @Input () products: any[];
-
-  constructor(private productService: ProductService) { 
-    this.products = [];
-  }
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
-
-  getProducts(): void {
-    this.productService.getProducts()
-      .subscribe((products: any[]) => {
-        this.products = products;
-      });
-  }
+export class HomeComponent {
 }
